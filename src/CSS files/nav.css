@@ -1,11 +1,12 @@
-
 nav {
-
-    
     padding: 10px 20px;
     width: 100%;
-    
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav img{
+    margin: 0px;
   }
   .nav-links {
     display: flex;
@@ -14,10 +15,54 @@ nav {
     justify-content: center;
   }
   .nav-links li {
-    margin-left: 50px;
+    margin-left: 30px;
   }
   .nav-links li a {
     text-decoration: none;
     color: #000;
     font-weight: bold;
   }
+
+  /*Mobiles*/
+  @media (max-width: 575.98px) {
+    nav{
+        padding:0px;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .nav-links {
+        flex-direction: column;
+        padding: 0px;
+    }
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    nav img{
+        width: 40%;
+    }
+}
+
+/* Tablets */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    nav{
+        padding:0px;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    nav img{
+        width: 25%;
+    }
+    .nav-links {
+        justify-content: space-around;
+        padding: 0px;
+    }
+    .nav-links li {
+        margin: 0px;
+        margin-left:10px;
+        font-size: 12px;
+    }
+    nav{
+        padding: 0px;
+    }
+}

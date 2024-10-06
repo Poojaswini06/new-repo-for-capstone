@@ -7,7 +7,6 @@ const Footer = () => {
         <div className="footer-logo">
           <img src="Logo.svg" alt="Little Lemon Logo" />
         </div>
-        
         <div className="footer-sections">
           {/* Doormat Navigation */}
           <div className="footer-navigation">
@@ -21,7 +20,6 @@ const Footer = () => {
               <li><a href="#login">Login</a></li>
             </ul>
           </div>
-          
           {/* Contact Information */}
           <div className="footer-contact">
             <h4>Contact</h4>
@@ -31,7 +29,6 @@ const Footer = () => {
               <li>Email: xyz@ll.com</li>
             </ul>
           </div>
-          
           {/* Social Links */}
           <div className="footer-social">
             <h4>Social Links</h4>
@@ -45,6 +42,5 @@ const Footer = () => {
       </footer>
     );
   };
-  
 
 export default Footer;
