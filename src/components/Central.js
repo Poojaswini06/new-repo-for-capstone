@@ -1,7 +1,7 @@
 import React from 'react';
 import '../CSS files/main.css';
 
-const MAin = () => {
+const Central = () => {
     return (
         <main>
             <section className='first'>
@@ -48,4 +48,4 @@ const MAin = () => {
     );
   };
 
-  export default MAin;
+  export default Central;
