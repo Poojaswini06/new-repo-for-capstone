@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Menu = () => {
-  return <div>Menu Page</div>;
+  return <>Menu Page</>;
 };
 
 export default Menu;

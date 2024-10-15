@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   return (
     <nav>
-      <img src="Logo.svg" alt="Little Lemon Logo" className="logo" />
+      <img src="Logo.svg" alt="Little Lemon Logo" className="logo" aria-label="Little Lemon Logo" />
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/menu">Menu</Link></li>
-        <li><Link to="/reservations">Reservations</Link></li>
-        <li><Link to="/orderonline">Order Online</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/" aria-label="Go to the Home Page">Home</Link></li>
+        <li><Link to="/about" aria-label="Learn more about Little Lemon">About</Link></li>
+        <li><Link to="/menu" aria-label="See the menu">Menu</Link></li>
+        <li><Link to="/reservations" aria-label="Make a reservation">Reservations</Link></li>
+        <li><Link to="/orderonline" aria-label="Order food online">Order Online</Link></li>
+        <li><Link to="/login" aria-label="Login to your account">Login</Link></li>
       </ul>
     </nav>
   );

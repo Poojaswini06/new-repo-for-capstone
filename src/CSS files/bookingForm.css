@@ -24,6 +24,11 @@
         font-family: 'Markazi Text';
         text-align: center;
     }
+    .submitForm:disabled {
+        background-color: #cccccc; /* Disabled color */
+        color: #666666; /* Disabled text color */
+        cursor: not-allowed;
+    }
 .form{
     margin-left: auto;
     margin-right: auto;

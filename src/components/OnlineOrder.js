@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OnlineOrder = () => {
-  return <div>Order Online Page</div>;
+  return <>Order Online Page</>;
 };
 
 export default OnlineOrder;
