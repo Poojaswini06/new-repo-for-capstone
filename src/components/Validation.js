@@ -1,5 +1,3 @@
-// src/validation.js
-
 export const validateGuests = (guests) => {
     if (guests < 1) {
         return 'Guests must be at least 1';

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import BookingForm from './BookingForm';  // Import the BookingForm component
+import BookingForm from './BookingForm';
 import '../CSS files/bookingForm.css';
 
 const Reservations = ({ availableTimes, dispatch, submitForm, fetchAPI }) => {
   const [showForm, setShowForm] = useState(false);
 
   const toggleForm = () => {
-    setShowForm(!showForm);  // Toggle the visibility of the form
+    setShowForm(!showForm);
   };
 
   return (
@@ -21,7 +21,7 @@ const Reservations = ({ availableTimes, dispatch, submitForm, fetchAPI }) => {
           availableTimes={availableTimes}
           dispatch={dispatch}
           submitForm={submitForm}
-          fetchAPI={fetchAPI} // Pass fetchAPI as prop
+          fetchAPI={fetchAPI}
         />}
     </div>
   );

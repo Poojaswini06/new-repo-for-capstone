@@ -27,7 +27,6 @@ const Footer = () => {
               <li aria-label="Email Address">Email: xyz@ll.com</li>
             </ul>
           </div>
-          {/* Social Links */}
           <div className="footer-social">
             <h4>Social Links</h4>
             <ul>

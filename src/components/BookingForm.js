@@ -24,7 +24,28 @@ function BookingForm({ submitForm }) {
 
         fetchTimes();
     }, [formData.date]);
-
+    const handleBlur = (e) => {
+      const { id, value } = e.target;
+      const newErrors = {};
+  
+      if (id === "date" && !value) {
+          newErrors.date = "Date is required";
+      }
+      if (id === "time" && !value) {
+          newErrors.time = "Time is required";
+      }
+      if (id === "guests" && value < 1) {
+          newErrors.guests = "Guests must be at least 1";
+      }
+      if (id === "occasion" && !value) {
+          newErrors.occasion = "Occasion is required";
+      }
+  
+      setErrors({
+          ...errors,
+          ...newErrors
+      });
+  };
     const handleChange = (e) => {
         const { id, value } = e.target;
         setFormData({
@@ -32,7 +53,6 @@ function BookingForm({ submitForm }) {
             [id]: value
         });
 
-        // Clear any error message when the user changes a field
         setErrors({
             ...errors,
             [id]: ""
@@ -42,7 +62,6 @@ function BookingForm({ submitForm }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Perform validation
         const newErrors = {};
         if (!formData.date) newErrors.date = "Date is required";
         if (!formData.time) newErrors.time = "Time is required";
@@ -70,12 +89,13 @@ function BookingForm({ submitForm }) {
                 value={formData.date}
                 min={new Date().toISOString().split('T')[0]}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 required
             />
             {errors.date && <span className="error">{errors.date}</span>}
 
             <label htmlFor="time">Choose time</label>
-            <select id="time" value={formData.time} onChange={handleChange} aria-label="Choose a time" required>
+            <select id="time" value={formData.time} onChange={handleChange} aria-label="Choose a time" onBlur={handleBlur} required>
                 <option value="">Select a time</option>
                 {availableTimes.map((time) => (
                     <option key={time} value={time}>
@@ -93,13 +113,15 @@ function BookingForm({ submitForm }) {
                 max="10"
                 value={formData.guests}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 aria-label="Number of guests"
                 required
             />
             {errors.guests && <span className="error">{errors.guests}</span>}
 
             <label htmlFor="occasion">Occasion</label>
-            <select id="occasion" value={formData.occasion} onChange={handleChange} aria-label="Select an occasion" required>
+            <select id="occasion" value={formData.occasion} onChange={handleChange} aria-label="Select an occasion" onBlur={handleBlur} required>
+                <option value="">Select an occasion</option>
                 <option value="Birthday">Birthday</option>
                 <option value="Anniversary">Anniversary</option>
             </select>

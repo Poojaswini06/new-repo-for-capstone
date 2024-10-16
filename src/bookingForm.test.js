@@ -12,20 +12,17 @@ test('date input has the correct min attribute', () => {
 
 test('time select has the required attribute', () => {
     render(<BookingForm submitForm={jest.fn()} />);
-    
     const timeSelect = screen.getByLabelText(/choose time/i);
     expect(timeSelect).toHaveAttribute('required');
 });
 test('guests input has the correct min and max attributes', () => {
     render(<BookingForm submitForm={jest.fn()} />);
-    
     const guestsInput = screen.getByLabelText(/number of guests/i);
     expect(guestsInput).toHaveAttribute('min', '1');
     expect(guestsInput).toHaveAttribute('max', '10');
 });
 test('occasion select has the required attribute', () => {
     render(<BookingForm submitForm={jest.fn()} />);
-    
     const occasionSelect = screen.getByLabelText(/occasion/i);
     expect(occasionSelect).toHaveAttribute('required');
 });
@@ -46,7 +43,7 @@ describe('Validation Functions', () => {
         });
 
         test('returns undefined for valid date', () => {
-            const validDate = new Date().toISOString().split('T')[0]; // today's date
+            const validDate = new Date().toISOString().split('T')[0];
             expect(validateDate(validDate)).toBeUndefined();
         });
     });

@@ -5,10 +5,10 @@ export const fetchAPI = async (date) => {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        return data.availableTimes; // Return the available times array
+        return data.availableTimes;
     } catch (error) {
         console.error('Error fetching available times:', error);
-        return []; // Return an empty array in case of error
+        return [];
     }
 };
 
@@ -25,9 +25,9 @@ export const submitAPI = async (formData) => {
             throw new Error('Network response was not ok');
         }
         const result = await response.json();
-        return result.success; // Return success or failure
+        return result.success;
     } catch (error) {
         console.error('Error submitting form:', error);
-        return false; // Return false in case of error
+        return false;
     }
 };

@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { useReducer, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
@@ -14,8 +12,7 @@ import OnlineOrder from './components/OnlineOrder';
 import Login from './components/Login';
 import BookingForm from './components/BookingForm';
 import ConfirmedBooking from './components/ConfirmedBooking';
-import { fetchAPI, submitAPI } from './api'; // Adjust the path as necessary
-
+import { fetchAPI, submitAPI } from './api';
 const initialState = {
     availableTimes: [],
 };
@@ -25,17 +22,16 @@ export function updateTimes(state, action) {
         case 'SET_TIMES':
             return { ...state, availableTimes: action.payload };
         case 'UPDATE_DATE':
-            return { ...state, selectedDate: action.date }; // Just update the selected date
+            return { ...state, selectedDate: action.date };
         default:
             return state;
     }
 }
 
-// Export initializeTimes for testing
 export const initializeTimes = async () => {
-    const today = new Date().toISOString().split('T')[0]; // Format date to YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
     const times = await fetchAPI(today);
-    return times; // Return the fetched times
+    return times;
 };
 
 function App() {
@@ -43,8 +39,8 @@ function App() {
     const navigate = useNavigate();
 
     const handleDateChange = async (date) => {
-        const newAvailableTimes = await fetchAPI(date); // Fetch new available times
-        dispatch({ type: 'SET_TIMES', payload: newAvailableTimes }); // Update available times
+        const newAvailableTimes = await fetchAPI(date);
+        dispatch({ type: 'SET_TIMES', payload: newAvailableTimes });
     };
 
     const submitForm = async (formData) => {
